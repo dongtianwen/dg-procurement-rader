@@ -25,6 +25,8 @@ def fetch_notices(page=1):
     }
     try:
         resp = requests.get(SEARCH_URL, params=params, headers=HEADERS, timeout=15)
+        print(f"Response status: {resp.status_code}")
+        print(f"Response content: {resp.text[:500]}")
         resp.raise_for_status()
         data = resp.json()
         items = data.get("result", {}).get("data", [])
