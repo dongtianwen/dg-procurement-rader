@@ -7,10 +7,13 @@ from openai import OpenAI
 GLM_API_KEY = os.environ.get("ZHIPUAI_API_KEY", "")
 SCORE_THRESHOLD = 6
 
-client = OpenAI(
-    api_key=GLM_API_KEY,
-    base_url="https://open.bigmodel.cn/api/paas/v4/"
-)
+if GLM_API_KEY:
+    client = OpenAI(
+        api_key=GLM_API_KEY,
+        base_url="https://open.bigmodel.cn/api/paas/v4/"
+    )
+else:
+    client = None
 
 PROMPT = """你是一个商业顾问，判断政府采购项目是否适合一人AI应用开发公司承接。
 
@@ -24,6 +27,12 @@ PROMPT = """你是一个商业顾问，判断政府采购项目是否适合一�
 
 
 def filter_notice(notice):
+    if not client:
+        notice["AI评分"] = 8
+        notice["是否适合"] = True
+        notice["AI理由"] = "跳过AI过滤（未配置API Key）"
+        return notice
+    
     try:
         resp = client.chat.completions.create(
             model="glm-4.7-flash",

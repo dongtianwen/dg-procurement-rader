@@ -27,7 +27,10 @@ def fetch_notices(page=1):
         resp = requests.get(SEARCH_URL, params=params, headers=HEADERS, timeout=15)
         resp.raise_for_status()
         data = resp.json()
-        return data.get("result", {}).get("data", []), data.get("result", {}).get("total", 0)
+        items = data.get("result", {}).get("data", [])
+        total = data.get("result", {}).get("total", 0)
+        print(f"第{page}页: 获取到 {len(items)} 条, 总计 {total} 条")
+        return items, total
     except Exception as e:
         print(f"[抓取失败] 第{page}页: {e}")
         return [], 0
