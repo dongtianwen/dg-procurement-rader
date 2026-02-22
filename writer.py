@@ -161,4 +161,6 @@ def run(leads, total_count):
     os.makedirs("output", exist_ok=True)
     with open("output/index.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print("页面已生成：output/index.html")
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+    print("页面已生成：output/index.html 和 index.html")
