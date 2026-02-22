@@ -1,5 +1,6 @@
 import requests
-from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 import time
 import random
 import json
@@ -16,17 +17,34 @@ BASE_URL = "https://gdgpo.czt.gd.gov.cn"
 SEARCH_URL = f"{BASE_URL}/freecms/rest/cm/notice/selectInfoMoreByParam.do"
 
 
-def fetch_notices(page=1):
+def create_session():
+    """创建带重试机制的 session"""
+    session = requests.Session()
+    retry = Retry(
+        total=5,
+        backoff_factor=1,
+        status_forcelist=[500, 502, 503, 504],
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    return session
+
+
+def fetch_notices(page=1, session=None):
     params = {
         "districtCode": "441900",
         "pageNo": page,
         "pageSize": 20,
         "noticeType": "001",
     }
+    
+    if session is None:
+        session = create_session()
+    
     try:
-        resp = requests.get(SEARCH_URL, params=params, headers=HEADERS, timeout=15)
+        resp = session.get(SEARCH_URL, params=params, headers=HEADERS, timeout=30)
         print(f"Response status: {resp.status_code}")
-        print(f"Response content: {resp.text[:500]}")
         resp.raise_for_status()
         data = resp.json()
         items = data.get("result", {}).get("data", [])
@@ -51,15 +69,19 @@ def parse_notice(item):
 
 def run():
     print("=== 开始抓取东莞市政府采购公告 ===")
+    session = create_session()
     all_notices = []
+    
     for page in range(1, 6):
         print(f"正在抓取第 {page} 页...")
-        items, total = fetch_notices(page)
+        items, total = fetch_notices(page, session)
         if not items:
+            print(f"第 {page} 页无数据，停止抓取")
             break
         for item in items:
             all_notices.append(parse_notice(item))
         print(f"  本页 {len(items)} 条，累计 {len(all_notices)} 条")
-        time.sleep(random.uniform(2, 3))
+        time.sleep(random.uniform(3, 5))
+    
     print(f"抓取完成，共 {len(all_notices)} 条")
     return all_notices
