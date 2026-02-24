@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdgeVision 视觉智能 | 东莞数据标注园 · AI质检专家</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .hero-bg { background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)), url('https://picsum.photos/id/1015/1920/1080'); background-size: cover; }
+    .card-hover { transition: all 0.3s; }
+    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- 导航栏 -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <span class="text-3xl">🔹</span>
+        <div>
+          <span class="text-2xl font-bold text-[#0A2540]">EdgeVision</span>
+          <span class="text-sm text-gray-500 block -mt-1">视觉智能</span>
+        </div>
+      </div>
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#services" class="hover:text-orange-600">解决方案</a>
+        <a href="#why" class="hover:text-orange-600">为什么选择我们</a>
+        <a href="#cases" class="hover:text-orange-600">成功案例</a>
+        <a href="#about" class="hover:text-orange-600">关于我们</a>
+      </div>
+      <a href="#contact" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full text-sm font-medium">免费咨询POC</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg h-screen flex items-center text-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-block bg-orange-600 text-xs font-bold tracking-widest px-6 py-2 rounded-full mb-6">东莞万江数据标注产业园入驻企业</div>
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+        20年资深架构师<br>用“单兵爆破”帮你撕开AI质检缺口
+      </h1>
+      <p class="text-2xl md:text-3xl text-gray-200 mb-10 max-w-3xl mx-auto">
+        专注注塑、五金中型代工厂<br>划痕、漏水、缺陷检测模型 · 边缘部署 · 1周POC
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-white text-[#0A2540] hover:bg-gray-100 px-10 py-5 rounded-2xl text-xl font-semibold inline-flex items-center justify-center gap-3">
+          <i class="fas fa-rocket"></i> 立即预约免费POC
+        </a>
+        <a href="https://www.dg.gov.cn/dgwjjd/" target="_blank" class="border-2 border-white hover:bg-white hover:text-[#0A2540] px-10 py-5 rounded-2xl text-xl font-semibold inline-flex items-center justify-center gap-3">
+          查看园区政策
+        </a>
+      </div>
+      <div class="mt-16 text-sm opacity-75">已助力怡和达、旺盈环保等中型工厂不良品率下降至0.15%</div>
+    </div>
+  </section>
+
+  <!-- 服务 -->
+  <section id="services" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-4">核心解决方案</h2>
+      <p class="text-center text-gray-600 mb-16 max-w-md mx-auto">只做标注公司做不了的“下游算法+边缘部署”，直接卖给工厂</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl card-hover">
+          <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📸</div>
+          <h3 class="text-2xl font-semibold mb-3">注塑件表面缺陷检测</h3>
+          <p class="text-gray-600">飞边、缩痕、色差、气孔 98%+ 精度 · Jetson Orin NX 边缘盒子部署</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl card-hover">
+          <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔍</div>
+          <h3 class="text-2xl font-semibold mb-3">五金件划痕/漏水检测</h3>
+          <p class="text-gray-600">支持复杂光照 · Few-shot 5-10张样品即可微调 · 年维护仅2万</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl card-hover">
+          <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl mb-6">⚡</div>
+          <h3 class="text-2xl font-semibold mb-3">标注数据 → 工厂SaaS模型</h3>
+          <p class="text-gray-600">专为数据标注公司定制下游算法 · 五五分成 · 零成本切入真实工厂</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 为什么选择我们 -->
+  <section id="why" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">单兵也能干翻巨头的3大杠杆</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <div class="text-6xl mb-6">🏭</div>
+          <h3 class="font-semibold text-xl mb-3">精准狙击腰部工厂</h3>
+          <p class="text-gray-600">5000万-2亿产值注塑/五金厂，老板1周拍板，避开巨头红海</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl mb-6">📍</div>
+          <h3 class="font-semibold text-xl mb-3">数据标注园前哨站</h3>
+          <p class="text-gray-600">零成本接触核心缺陷数据 · 与22家标注公司已建立合作通道</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl mb-6">💰</div>
+          <h3 class="font-semibold text-xl mb-3">政策红利全吃</h3>
+          <p class="text-gray-600">数据集/模型补贴最高200万 + AI+制造示范场景10-50万</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 案例（可后期替换成真实） -->
+  <section id="cases" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">已落地真实案例</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-3xl">
+          <div class="bg-gray-200 h-64 rounded-2xl mb-6 flex items-center justify-center text-6xl">📉</div>
+          <h4 class="font-semibold">某注塑厂（年产值1.2亿）</h4>
+          <p class="text-green-600 font-medium">不良品率从2.8% → 0.15% · ROI 6个月回本</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl">
+          <div class="bg-gray-200 h-64 rounded-2xl mb-6 flex items-center justify-center text-6xl">⚙️</div>
+          <h4 class="font-semibold">某五金代工厂（年产值7800万）</h4>
+          <p class="text-green-600 font-medium">质检人力减少70% · 已申请东莞AI示范场景资助</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section id="about" class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8">我是谁</h2>
+      <div class="prose mx-auto text-left text-lg">
+        <p>20年资深系统架构师，前大型制造企业首席AI架构师。2026年入驻东莞万江数据标注产业园，专注“边缘侧空投”战术：用极低试错成本，帮助5000万-2亿产值的中型注塑/五金工厂实现AI视觉质检落地。</p>
+        <p class="mt-6">不做大而全，只做标注公司最缺的“可直接卖给工厂的落地模型”。</p>
+      </div>
+      <div class="mt-12 text-sm text-gray-500">📍 办公地址：东莞市万江街道坝头数据标注产业园</div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="py-24 bg-[#0A2540] text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">准备好撕开口子了吗？</h2>
+      <p class="text-2xl mb-12 opacity-90">首单POC免费 · 1周出模型 · 随时可约园区见面</p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-md mx-auto">
+        <a href="tel:0769-22278988" class="bg-white text-[#0A2540] py-6 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3">
+          <i class="fas fa-phone"></i> 0769-22278988（赖先生/园区运营）
+        </a>
+        <a href="https://wa.me/852xxxxxxxx" class="bg-white text-[#0A2540] py-6 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3">
+          <i class="fab fa-whatsapp"></i> 香港微信/WhatsApp
+        </a>
+      </div>
+      <p class="mt-10 text-sm opacity-75">或直接扫码加我微信（主页底部二维码）</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-12 text-center text-sm">
+    <div>© 2026 EdgeVision 视觉智能 | 入驻东莞市数据标注产业园</div>
+    <div class="mt-4">政策支持：东莞市万江街道经济发展局 | <a href="http://www.dg.gov.cn/dgwjjd/" class="underline">园区官网</a></div>
+  </footer>
+
+  <script>
+    tailwind.config = { content: ["*"], theme: { extend: {} } }
+  </script>
+</body>
+</html>
