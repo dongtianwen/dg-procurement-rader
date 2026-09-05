@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东莞采购雷达 · dg-procurement-radar</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f1f5f9;
+            padding: 20px;
+            color: #1e293b;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 32px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .header p { color: #94a3b8; font-size: 0.9rem; }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat-num { font-size: 2rem; font-weight: 700; color: #4f46e5; }
+        .stat-label { color: #64748b; font-size: 0.85rem; margin-top: 4px; }
+        .lead-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid #4f46e5;
+        }
+        .lead-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .lead-title { font-weight: 600; font-size: 1rem; flex: 1; }
+        .score-badge {
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .lead-meta {
+            display: flex;
+            gap: 16px;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .lead-reason {
+            background: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+        .detail-link {
+            color: #4f46e5;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .detail-link:hover { text-decoration: underline; }
+        .no-leads {
+            text-align: center;
+            padding: 60px;
+            background: white;
+            border-radius: 12px;
+            color: #64748b;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 600px) {
+            .lead-header { flex-direction: column; }
+            .stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📡 东莞采购雷达</h1>
+            <p>自动筛选适合 AI 应用开发公司承接的政府采购项目</p>
+            <p style="margin-top:8px">更新时间：2026年09月05日 04:06</p>
+        </div>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-num">0</div>
+                <div class="stat-label">今日抓取总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">0</div>
+                <div class="stat-label">符合条件项目</div>
+            </div>
+        </div>
+        <div class="no-leads"><p>📭 今日暂无符合条件的采购项目</p></div>
+        <div class="footer">
+            <p>由 GitHub Actions 自动生成 | 数据来源：广东省政府采购网</p>
+            <p>每天早上 8:00 自动更新（北京时间）</p>
+        </div>
+    </div>
+</body>
+</html>
